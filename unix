@@ -3,3 +3,5 @@ echo -n {6951..6999} | xargs -d ' ' -n1 --replace=^ echo "echo -n '^ '; redis-cl
 sudo ionice -c3 tail -5000000 /var/log/nginx/access.log | pcregrep -o0 '"(POST|GET) .*?(\?| )' | sort | uniq -c | sort -n 
 
 gprof2dot -f pstats ../log.prof | dot -Tsvg -o /tmp/prof.svg
+
+python -m pytest tests --cov package --cov-report term-missing
