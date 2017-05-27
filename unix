@@ -5,3 +5,5 @@ sudo ionice -c3 tail -5000000 /var/log/nginx/access.log | pcregrep -o0 '"(POST|G
 gprof2dot -f pstats ../log.prof | dot -Tsvg -o /tmp/prof.svg
 
 python -m pytest tests --cov package --cov-report term-missing
+
+echo -n 12 00 00 13 00 00 20 00 03 ff ff ff | xxd -r -p | python lumos.py
