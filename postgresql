@@ -1,0 +1,3 @@
+# to start local postgres with just `psql` (no user or db specification)
+
+sudo -u postgres createuser -s $(whoami); createdb $(whoami)
